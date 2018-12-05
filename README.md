@@ -1,2 +1,2 @@
-# code-library
-各种书籍源代码
+# craze-java
+疯狂Java讲义(第3版)_源代码
