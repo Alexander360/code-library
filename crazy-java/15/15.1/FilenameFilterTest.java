@@ -1,27 +1,14 @@
-
 import java.io.*;
-/**
- * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
- * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
- * <br/>This program is protected by copyright laws.
- * <br/>Program Name:
- * <br/>Date:
- * @author Yeeku.H.Lee kongyeeku@163.com
- * @version 1.0
- */
-public class FilenameFilterTest
-{
-	public static void main(String[] args)
-	{
+
+public class FilenameFilterTest {
+
+	public static void main(String[] args) {
 		File file = new File(".");
-		// Ê¹ÓÃLambda±í´ïÊ½£¨Ä¿±êÀàÐÍÎªFilenameFilter£©ÊµÏÖÎÄ¼þ¹ýÂËÆ÷¡£
-		// Èç¹ûÎÄ¼þÃûÒÔ.java½áÎ²£¬»òÕßÎÄ¼þ¶ÔÓ¦Ò»¸öÂ·¾¶£¬·µ»Øtrue
-		String[] nameList = file.list((dir, name) -> name.endsWith(".java")
-			|| new File(name).isDirectory());
-		for(String name : nameList)
-		{
+		// ä½¿ç”¨Lambdaè¡¨è¾¾å¼(ç›®æ ‡ç±»åž‹ä¸ºFilenameFilter)å®žçŽ°æ–‡ä»¶è¿‡æ»¤å™¨ï¼Œå¦‚æžœæ–‡ä»¶åä»¥.javaç»“å°¾, æˆ–è€…æ–‡ä»¶å¯¹åº”ä¸€ä¸ªè·¯å¾„, åˆ™è¿”å›žtrue
+		String[] nameList = file.list((dir, name) -> name.endsWith(".java") || new File(name).isDirectory());
+		for(String name : nameList) {
 			System.out.println(name);
 		}
 	}
+
 }
