@@ -1,38 +1,25 @@
-
 import java.io.*;
-/**
- * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>
- * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
- * <br/>This program is protected by copyright laws.
- * <br/>Program Name:
- * <br/>Date:
- * @author Yeeku.H.Lee kongyeeku@163.com
- * @version 1.0
- */
-public class FileOutputStreamTest
-{
-	public static void main(String[] args)
-	{
-		try(
-			// ´´½¨×Ö½ÚÊäÈëÁ÷
-			FileInputStream fis = new FileInputStream(
-				"FileOutputStreamTest.java");
-			// ´´½¨×Ö½ÚÊä³öÁ÷
-			FileOutputStream fos = new FileOutputStream("newFile.txt"))
-		{
+
+public class FileOutputStreamTest {
+
+	public static void main(String[] args) {
+		try {
+            // åˆ›å»ºå­—èŠ‚è¾“å…¥æµ
+            FileInputStream fis = new FileInputStream(
+                    "/home/cx4gxf/IdeaProjects/code-library/crazy-java/15/15.3/FileOutputStreamTest.java");
+            // åˆ›å»ºå­—èŠ‚è¾“å‡ºæµ
+            FileOutputStream fos = new FileOutputStream("newFile.txt");
 			byte[] bbuf = new byte[32];
 			int hasRead = 0;
-			// Ñ­»·´ÓÊäÈëÁ÷ÖĞÈ¡³öÊı¾İ
-			while ((hasRead = fis.read(bbuf)) > 0 )
-			{
-				// Ã¿¶ÁÈ¡Ò»´Î£¬¼´Ğ´ÈëÎÄ¼şÊä³öÁ÷£¬¶ÁÁË¶àÉÙ£¬¾ÍĞ´¶àÉÙ¡£
+			// å¾ªç¯ä»è¾“å…¥æµä¸­å–å‡ºæ•°æ®
+			while ((hasRead = fis.read(bbuf)) > 0 ) {
+				// æ¯è¯»å–ä¸€æ¬¡ï¼Œå³å†™å…¥æ–‡ä»¶è¾“å‡ºæµï¼Œè¯»äº†å¤šå°‘ï¼Œå°±å†™å¤šå°‘ã€‚
 				fos.write(bbuf , 0 , hasRead);
 			}
 		}
-		catch (IOException ioe)
-		{
+		catch (IOException ioe) {
 			ioe.printStackTrace();
 		}
 	}
+
 }
